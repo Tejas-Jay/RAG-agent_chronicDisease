@@ -11,7 +11,7 @@ user_input = st.text_input("💬 Enter your request:", "Analyze patient health d
 url = "https://api.langflow.astra.datastax.com/lf/3e1ee4ba-21f0-4b05-a479-14553904059c/api/v1/run/9c5bad27-1fa5-4e72-846f-1d82606dcb2c"
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer AstraCS:pTxMLzgkRJJSwZowdtqDgZXS:8b35e6d8547bcb0ebcfdd775f387cb0b58fce1b4eb6acce375baf077877a84f3"
+    "Authorization": "Bearer test"
 }
 
 # Button to send input
@@ -23,7 +23,7 @@ if st.button("Send to Langflow"):
     }
 
     try:
-        response = requests.post(url, json=payload, headers=headers)
+        response = requests.post(URL, json=payload, headers=headers)
         response.raise_for_status()
         result = response.json()
 
