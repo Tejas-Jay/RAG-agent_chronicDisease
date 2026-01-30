@@ -23,7 +23,7 @@ if st.button("Send to Langflow"):
     }
 
     try:
-        response = requests.post(ur;, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=headers)
         response.raise_for_status()
         result = response.json()
 
