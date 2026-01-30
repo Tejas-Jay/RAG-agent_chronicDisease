@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 
 # Streamlit App Title
-st.title("🚀 Langflow Astra API - Trip Planner")
+st.title("🚀 Langflow Astra API - Chronic Disease Monitoring Agent")
 
 # User input
-user_input = st.text_input("💬 Enter your request:", "give me 1 week pune trip plan according to todays date")
+user_input = st.text_input("💬 Enter your request:", "Analyze patient health data using the provided context to identify risk trends and provide safe, non-diagnostic lifestyle recommendations aligned with clinical guidelines.")
 
 # API endpoint & headers
 url = "https://api.langflow.astra.datastax.com/lf/3e1ee4ba-21f0-4b05-a479-14553904059c/api/v1/run/9c5bad27-1fa5-4e72-846f-1d82606dcb2c"
@@ -30,7 +30,7 @@ if st.button("Send to Langflow"):
         # Extract only the "text" field from nested JSON
         try:
             text_output = result["outputs"][0]["outputs"][0]["results"]["message"]["data"]["text"]
-            st.success("✅ Trip Plan Generated")
+            st.success("✅ Results Generated")
             st.write(text_output)  # Only show text
         except (KeyError, IndexError):
             st.error("⚠️ Could not extract text from response")
